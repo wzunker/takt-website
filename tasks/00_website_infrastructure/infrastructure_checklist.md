@@ -15,18 +15,18 @@ This checklist outlines the step-by-step process for building and deploying Takt
 - [X] Clone repository to local development environment
 
 ### 1.2 Frontend Framework Setup
-- [ ] Initialize React project using Vite
+- [X] Initialize React project using Vite
   ```bash
   npm create vite@latest takt-website --template react
   cd takt-website
   npm install
   ```
-- [ ] Install and configure TailwindCSS
+- [X] Install and configure TailwindCSS
   ```bash
   npm install tailwindcss postcss autoprefixer
   npx tailwindcss init -p
   ```
-- [ ] Configure Tailwind in `tailwind.config.js` with Takt brand colors:
+- [X] Configure Tailwind in `tailwind.config.js` with Takt brand colors:
   - Takt Orange: `#E16809`
   - Takt Green: `#3E553C`
   - Iron Grey: `#322E2D`

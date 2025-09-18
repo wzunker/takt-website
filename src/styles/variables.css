@@ -1,0 +1,82 @@
+/* Takt Brand CSS Variables */
+/* Complements Tailwind configuration with native CSS custom properties */
+
+:root {
+  /* Primary Brand Colors */
+  --takt-orange: #E16809;
+  --takt-green: #3E553C;
+  
+  /* Text Colors */
+  --iron-grey: #322E2D;
+  
+  /* Background Colors */
+  --canvas-cream: #F7F3E9;
+  
+  /* Accent Colors */
+  --amber-orange: #CC7A00;
+  --solar-orange: #FFA51F;
+  --sky-blue: #4B95D1;
+  
+  /* Typography */
+  --font-poppins: 'Poppins', system-ui, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Spacing (following generous white space principle) */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Border Radius (curved edges, soft corners) */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;  /* Takt standard */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  /* Shadows (subtle as per brand guidelines) */
+  --shadow-sm: 0 1px 2px 0 rgba(50, 46, 45, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(50, 46, 45, 0.1), 0 2px 4px -1px rgba(50, 46, 45, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(50, 46, 45, 0.1), 0 4px 6px -2px rgba(50, 46, 45, 0.05);
+  
+  /* Transitions (purposeful motion) */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+}
+
+/* Utility classes using CSS variables */
+.takt-text-primary {
+  color: var(--iron-grey);
+}
+
+.takt-bg-warm {
+  background-color: var(--canvas-cream);
+}
+
+.takt-bg-primary {
+  background-color: var(--takt-orange);
+}
+
+.takt-bg-secondary {
+  background-color: var(--takt-green);
+}
+
+.takt-rounded {
+  border-radius: var(--radius-lg);
+}
+
+.takt-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.takt-transition {
+  transition: all var(--transition-normal);
+}
