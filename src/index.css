@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #322E2D; /* Iron Grey */
+  background-color: #F7F3E9; /* Canvas Cream */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Takt Brand Components */
+@layer components {
+  .btn-takt-primary {
+    @apply bg-takt-orange hover:bg-amber-orange text-white font-medium py-2 px-6 rounded-takt transition-colors duration-200;
+  }
+  
+  .btn-takt-secondary {
+    @apply bg-takt-green hover:bg-opacity-90 text-white font-medium py-2 px-6 rounded-takt transition-colors duration-200;
+  }
+  
+  .text-takt-heading {
+    @apply text-iron-grey font-poppins font-bold;
+  }
+  
+  .text-takt-body {
+    @apply text-iron-grey font-poppins font-normal;
+  }
+  
+  .bg-takt-warm {
+    @apply bg-canvas-cream;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F3E9; /* Canvas Cream */
+  color: #322E2D; /* Iron Grey */
+}
