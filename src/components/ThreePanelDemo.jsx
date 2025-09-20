@@ -13,21 +13,21 @@ const ThreePanelDemo = ({ className = '' }) => {
     {
       id: 'receiving-dock',
       title: 'Receiving Dock',
-      image: '/src/assets/illustrations/loading_dock.png',
+      image: '/loading_dock.png',
       question: 'Why is the raw material shipment delayed?',
       response: 'Shipment #482 from Supplier A is delayed due to a logistics hold at the port. Estimated arrival: Friday, 2 PM.'
     },
     {
       id: 'production-floor',
       title: 'Production Floor',
-      image: '/src/assets/illustrations/machine_maintenance.png',
+      image: '/machine_maintenance.png',
       question: "Why isn't the pump maintaining correct pressure?",
       response: 'Pump 3 in Unit 2 is running at 60% capacity due to a clogged filter. Replace filter cartridge.'
     },
     {
       id: 'business-meeting',
       title: 'Business Meeting',
-      image: '/src/assets/illustrations/business_meeting.png',
+      image: '/business_meeting.png',
       question: 'What are our top chemical orders this month and due dates?',
       response: 'Top 3 orders: Order #2205 (Polyethylene, Sept 25), #2207 (Methanol, Sept 28), #2208 (Styrene, Oct 2).'
     }
