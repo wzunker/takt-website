@@ -96,29 +96,68 @@ const CallToAction = ({ className = '' }) => {
     }
   };
 
-  if (isSuccess) {
-    return (
-      <section className={`py-16 md:py-24 bg-gradient-to-br from-takt-orange to-amber-orange ${className}`}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-white rounded-takt shadow-lg p-8">
-              <div className="w-16 h-16 bg-takt-green rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-bold text-iron-grey mb-4">
-                Thanks for your interest!
-              </h2>
-              <p className="text-iron-grey opacity-80">
-                You will hear from us soon.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+        if (isSuccess) {
+            return (
+                <section className={`relative py-16 md:py-24 overflow-hidden ${className}`}>
+                    {/* Layered Wave Background - Same as main form */}
+                    <div className="absolute inset-0">
+                        {/* Base layer - Canvas Cream */}
+                        <div className="absolute inset-0 bg-canvas-cream"></div>
+
+                        {/* Wave Layer 1 - Takt Green */}
+                        <div className="absolute inset-0">
+                            <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+                                <path
+                                    d="M0,300 C300,200 600,350 1200,250 L1200,400 L0,400 Z"
+                                    fill="#3E553C"
+                                    opacity="0.8"
+                                />
+                            </svg>
+                        </div>
+
+                        {/* Wave Layer 2 - Takt Orange */}
+                        <div className="absolute inset-0">
+                            <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+                                <path
+                                    d="M0,350 C400,250 800,400 1200,300 L1200,400 L0,400 Z"
+                                    fill="#E16809"
+                                    opacity="0.9"
+                                />
+                            </svg>
+                        </div>
+
+                        {/* Wave Layer 3 - Amber Orange (lightest) */}
+                        <div className="absolute inset-0">
+                            <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+                                <path
+                                    d="M0,380 C200,320 900,420 1200,350 L1200,400 L0,400 Z"
+                                    fill="#CC7A00"
+                                    opacity="0.7"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div className="container mx-auto px-4 relative z-10">
+                        <div className="max-w-2xl mx-auto text-center">
+                            <div className="bg-white/95 backdrop-blur-sm rounded-takt shadow-xl p-8">
+                                <div className="w-16 h-16 bg-takt-green rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h2 className="text-2xl font-bold text-iron-grey mb-4">
+                                    Thanks for your interest!
+                                </h2>
+                                <p className="text-iron-grey opacity-80">
+                                    You will hear from us soon.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
 
   return (
     <section className={`relative py-16 md:py-24 overflow-hidden ${className}`}>
