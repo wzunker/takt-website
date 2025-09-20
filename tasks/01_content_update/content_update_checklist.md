@@ -102,16 +102,16 @@ This checklist outlines the comprehensive content update for Takt's website, tra
   - [X] Hover effects and interactions (hover:shadow-lg, group hover states)
 
 ### 4.2 Panel Content - Receiving Dock
-- [ ] **Visual elements**
-  - [ ] Use `loading_dock.png` as hero image
-  - [ ] Apply low-poly aesthetic consistency
-  - [ ] Optimize image for web performance
-- [ ] **Interactive chat animation**
-  - [ ] Question: "Why is the raw material shipment delayed?"
-  - [ ] Response: "Shipment #482 from Supplier A is delayed due to a logistics hold at the port. Estimated arrival: Friday, 2 PM."
-  - [ ] Hover-triggered typing animation
-  - [ ] Chat bubble sequence: typing → send → loading → response
-  - [ ] Mobile tap functionality for touch devices
+- [X] **Visual elements**
+  - [X] Use `loading_dock.png` as hero image (moved to public folder)
+  - [X] Apply low-poly aesthetic consistency (maintained from original assets)
+  - [X] Optimize image for web performance (proper Vite serving)
+- [X] **Interactive chat animation**
+  - [X] Question: "Why is the raw material shipment delayed?"
+  - [X] Response: "Shipment #482 from Supplier A is delayed due to a logistics hold at the port. Estimated arrival: Friday, 2 PM."
+  - [X] Hover-triggered typing animation (TypingEffect component integrated)
+  - [X] Chat bubble sequence: typing → send → loading → response (ChatBubbleAnimation component)
+  - [X] Mobile tap functionality for touch devices (onClick handler with toggle)
 
 ### 4.3 Panel Content - Production Floor
 - [ ] **Visual elements**
