@@ -1,26 +1,20 @@
 import React from 'react';
-import { Header, Layout } from './components';
+import { Header, Layout, HeroSection } from './components';
 
 function App() {
   return (
     <Layout includeContainer={false}>
-      {/* Header Implementation - Phase 2.1 */}
+      {/* Header Implementation - Phases 2.1 & 2.2 Complete */}
       <Header />
 
-      {/* Main Content Area - Development in Progress */}
-      <main className="flex-1 flex items-center justify-center p-8">
-        <div className="text-center">
-          <div className="w-24 h-24 bg-takt-orange rounded-takt flex items-center justify-center mx-auto shadow-md mb-6">
-            <span className="text-white text-3xl font-bold">δ</span>
-          </div>
-          <h1 className="text-3xl font-bold mb-4">
-            <span className="text-takt-orange">Takt</span> Website
-          </h1>
-          <p className="text-lg opacity-80 mb-4">
-            Header component now active
-          </p>
-          <p className="text-sm opacity-60">
-            Phase 2.1 - Logo Integration Complete
+      {/* Hero Section Implementation - Phase 3.1 */}
+      <HeroSection />
+
+      {/* Development Status - Temporary */}
+      <main className="py-8 bg-canvas-cream">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm text-iron-grey opacity-60">
+            Phase 3.1 - Hero Section Content Implementation Complete
           </p>
         </div>
       </main>
