@@ -9,3 +9,4 @@ export { default as ThreePanelDemo } from './ThreePanelDemo.jsx';
 export { default as CallToAction } from './CallToAction.jsx';
 export { default as ChatBubbleAnimation } from './ChatBubbleAnimation.jsx';
 export { default as TypingEffect } from './TypingEffect.jsx';
+export { default as QuestionDropdown } from './QuestionDropdown.jsx';

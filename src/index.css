@@ -59,6 +59,36 @@
   .animation-delay-400 {
     animation-delay: 0.4s;
   }
+
+  /* Enhanced Dropdown Styling */
+  select option {
+    padding: 12px 8px !important;
+    line-height: 1.4 !important;
+    background-color: white !important;
+    color: #322E2D !important;
+    font-weight: 400 !important;
+    border: none !important;
+    margin: 2px 0 !important;
+  }
+
+  select option:hover,
+  select option:focus,
+  select option:checked {
+    background-color: #F7F3E9 !important;
+    color: #E16809 !important;
+    font-weight: 500 !important;
+  }
+
+  select option:disabled {
+    color: #9CA3AF !important;
+    font-style: italic !important;
+    background-color: #F9FAFB !important;
+  }
+
+  /* Better dropdown appearance on focus */
+  select:focus {
+    box-shadow: 0 0 0 3px rgba(225, 104, 9, 0.1) !important;
+  }
 }
 
 /* Keyframe Animations */

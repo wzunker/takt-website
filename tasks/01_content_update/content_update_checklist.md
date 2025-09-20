@@ -157,6 +157,72 @@ This checklist outlines the comprehensive content update for Takt's website, tra
   - [X] Touch-friendly mobile interactions (onClick with toggle)
   - [X] Reset animation on mouse leave (desktop) and panel switch
 
+### 4.6 Enhanced Dropdown Q&A System Implementation
+- [X] **Dropdown component development**
+  - [X] Create styled `<select>` dropdown with Tailwind CSS
+  - [X] Implement consistent brand styling (rounded-takt, Takt Orange accents)
+  - [X] Ensure mobile-responsive dropdown behavior
+  - [X] Add proper accessibility attributes (labels, ARIA support)
+- [X] **Integration with existing animation system**
+  - [X] Hook dropdown `onChange` event to trigger animation sequence
+  - [X] Update ChatBubbleAnimation component to accept dynamic question/response pairs
+  - [X] Maintain existing animation timing and visual design
+  - [X] Ensure smooth transitions between different Q&A selections
+
+### 4.7 Expanded Content Implementation - Receiving Dock
+- [X] **Multiple Q&A pairs setup**
+  - [X] Q1: "Why is the raw material shipment delayed?" → "Shipment #482 from Supplier A is delayed due to a logistics hold at the port. Estimated arrival: Friday, 2 PM."
+  - [X] Q2: "Which supplier has the best on-time delivery record?" → "Supplier B: 98% on-time deliveries over the last 6 months."
+  - [X] Q3: "Do we have enough Ethylene stock to cover this week's production?" → "Yes, current Ethylene inventory is 3,500 kg, sufficient for 6 days at planned throughput."
+- [X] **Content integration**
+  - [X] Update ThreePanelDemo component with expanded question arrays
+  - [X] Ensure consistent response length and formatting
+  - [X] Maintain brand voice across all responses
+
+### 4.8 Expanded Content Implementation - Production Floor
+- [X] **Multiple Q&A pairs setup**
+  - [X] Q1: "Why isn't the pump maintaining correct pressure?" → "Pump 3 in Unit 2 is running at 60% capacity due to a clogged filter. Replace filter cartridge."
+  - [X] Q2: "What's the downtime trend for this machine?" → "This machine has logged 5 hours downtime in the past month, down 40% compared to last month."
+  - [X] Q3: "Are there spare pump parts available?" → "Yes, 4 replacement filters and 2 spare pumps are in inventory."
+- [X] **Content integration**
+  - [X] Update scenario data structure for multiple questions
+  - [X] Ensure technical accuracy of production-related responses
+  - [X] Maintain conversational, helpful tone
+
+### 4.9 Expanded Content Implementation - Business Meeting
+- [X] **Multiple Q&A pairs setup**
+  - [X] Q1: "What are our top chemical orders this month and due dates?" → "Top 3 orders: Order #2205 (Polyethylene, Sept 25), #2207 (Methanol, Sept 28), #2208 (Styrene, Oct 2)."
+  - [X] Q2: "Which customers contribute the most revenue this quarter?" → "Top 3 customers: ChemCo ($1.2M), Plastix ($900K), GreenChem ($750K)."
+  - [X] Q3: "How has production efficiency changed month-over-month?" → "Overall efficiency improved from 82% in August to 88% in September."
+- [X] **Content integration**
+  - [X] Update business scenario with executive-level questions
+  - [X] Format financial and performance data consistently
+  - [X] Ensure professional, data-driven response tone
+
+### 4.10 User Experience Enhancement
+- [X] **Interaction flow optimization**
+  - [X] Default state: Illustration + dropdown with question options
+  - [X] Selection trigger: Dropdown onChange → animation sequence start
+  - [X] Animation sequence: Selected question types → loading → response appears
+  - [X] Reset functionality: Allow users to select different questions
+- [X] **Mobile optimization**
+  - [X] Ensure dropdown is touch-friendly on mobile devices
+  - [X] Optimize spacing and sizing for smaller screens
+  - [X] Test dropdown behavior across different mobile browsers
+  - [X] Maintain animation performance on mobile devices
+
+### 4.11 Component Architecture Updates
+- [ ] **Data structure refactoring**
+  - [ ] Update demoScenarios array to support multiple Q&A pairs per scenario
+  - [ ] Implement question selection state management
+  - [ ] Create reusable dropdown component for consistency
+  - [ ] Ensure backward compatibility with existing animation system
+- [ ] **Performance optimization**
+  - [ ] Lazy load animation sequences to improve initial page load
+  - [ ] Optimize component re-renders when switching between questions
+  - [ ] Implement proper cleanup for animation timers
+  - [ ] Test performance with all 9 Q&A combinations
+
 ---
 
 ## Phase 5: Call to Action Section
