@@ -19,9 +19,10 @@ const Button = ({
   
   // Variant classes
   const variantClasses = {
-    primary: 'bg-takt-orange hover:bg-amber-orange text-white focus:ring-takt-orange',
-    secondary: 'bg-takt-green hover:bg-opacity-90 text-white focus:ring-takt-green',
-    outline: 'border-2 border-takt-orange text-takt-orange hover:bg-takt-orange hover:text-white focus:ring-takt-orange'
+    primary: 'bg-takt-orange hover:bg-amber-orange text-white focus:ring-takt-orange shadow-md hover:shadow-lg',
+    secondary: 'bg-takt-green hover:bg-opacity-90 text-white focus:ring-takt-green shadow-md hover:shadow-lg',
+    outline: 'border-2 border-takt-orange text-takt-orange hover:bg-takt-orange hover:text-white focus:ring-takt-orange',
+    cta: 'bg-takt-orange hover:bg-amber-orange text-white focus:ring-takt-orange shadow-lg hover:shadow-xl transform hover:scale-105'
   };
   
   // Size classes
