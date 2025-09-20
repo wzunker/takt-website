@@ -52,11 +52,11 @@ This checklist outlines the comprehensive content update for Takt's website, tra
   - [X] Test logo visibility and contrast
 
 ### 2.2 Header Styling
-- [ ] **Clean, minimal design**
-  - [ ] No navigation menu (single-page design)
-  - [ ] Subtle shadow or border if needed
-  - [ ] Curved edges following brand guidelines
-  - [ ] Mobile-responsive behavior
+- [X] **Clean, minimal design**
+  - [X] No navigation menu (single-page design)
+  - [X] Subtle shadow or border if needed (added subtle border-b border-gray-100)
+  - [X] Curved edges following brand guidelines (rounded-takt on hover container)
+  - [X] Mobile-responsive behavior (h-12 md:h-16 responsive sizing)
 
 ---
 

@@ -7,14 +7,16 @@ import React from 'react';
  */
 const Header = ({ className = '' }) => {
   return (
-    <header className={`w-full py-6 bg-canvas-cream ${className}`}>
+    <header className={`w-full py-6 bg-canvas-cream border-b border-gray-100 ${className}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-center items-center">
-          <img 
-            src="/logo-takt.png" 
-            alt="Takt - AI retrieval engine for production teams" 
-            className="h-12 md:h-16 w-auto transition-transform duration-200 hover:scale-105"
-          />
+          <div className="p-2 rounded-takt transition-all duration-200 hover:bg-white hover:shadow-sm">
+            <img 
+              src="/logo-takt.png" 
+              alt="Takt - AI retrieval engine for production teams" 
+              className="h-12 md:h-16 w-auto transition-transform duration-200 hover:scale-105"
+            />
+          </div>
         </div>
       </div>
     </header>
