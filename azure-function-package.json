@@ -1,0 +1,15 @@
+{
+  "name": "takt-email-signup-function",
+  "version": "1.0.0",
+  "description": "Azure Function to handle Takt website email signups",
+  "main": "index.js",
+  "dependencies": {
+    "@azure/data-tables": "^13.2.2"
+  },
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests specified\""
+  },
+  "author": "Takt Team",
+  "license": "MIT"
+}

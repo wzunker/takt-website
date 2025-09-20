@@ -61,25 +61,36 @@ const CallToAction = ({ className = '' }) => {
     }
 
     setIsSubmitting(true);
+    setErrors({});
 
     try {
-      // TODO: Replace with actual Azure Function endpoint
-      // const response = await fetch('/api/signup', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
+            // Call Azure Function
+            const response = await fetch('https://takt-website-functions-fcf4cphufscgenbe.eastus-01.azurewebsites.net/api/submitemailsignup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          companyName: formData.companyName
+        })
+      });
 
-      // Simulate API call for now
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const result = await response.json();
 
+      if (!response.ok) {
+        throw new Error(result.error || 'Submission failed');
+      }
+
+      // Success - show confirmation and reset form
       setIsSuccess(true);
       setFormData({ email: '', companyName: '' });
+      
     } catch (error) {
-      console.error('Signup error:', error);
-      setErrors({ submit: 'Something went wrong. Please try again.' });
+      console.error('Form submission error:', error);
+      setErrors({ 
+        submit: error.message || 'Something went wrong. Please try again.' 
+      });
     } finally {
       setIsSubmitting(false);
     }
