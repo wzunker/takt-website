@@ -95,7 +95,7 @@ const ThreePanelDemo = ({ className = '' }) => {
   };
 
   return (
-    <section className={`py-16 md:py-24 bg-canvas-cream ${className}`}>
+    <section className={`pt-0 pb-16 md:pt-2 md:pb-24 bg-canvas-cream ${className}`}>
       <div className="container mx-auto px-4">
         {/* Section Headline */}
         <div className="text-center mb-16">

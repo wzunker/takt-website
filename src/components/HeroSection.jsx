@@ -26,15 +26,34 @@ const HeroSection = ({ className = '' }) => {
             <div className="text-takt-green">for every <span className="text-takt-orange relative inline-block hover:scale-105 transition-transform duration-300">
               hair-on-fire
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-takt-orange opacity-20 rounded-full"></div>
-            </span> moment.</div>
+            </span> production moment.</div>
           </h1>
           
-          {/* Supporting Subtext with improved spacing */}
+          {/* Supporting Subtext with Production Floor Card */}
           <div className="animate-fade-in-up animation-delay-200">
-            <p className="text-lg md:text-xl lg:text-2xl text-iron-grey opacity-85 mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
-              Takt is a purpose-built <span className="text-takt-orange font-semibold">AI retrieval engine</span> for production teams—turning every input into output, 
-              delivering perfect, accurate, relevant info at your fingertips.
-            </p>
+            <div className="max-w-4xl mx-auto mb-12">
+              {/* Text and Image Card - Stacked Layout */}
+              <div className="bg-white rounded-takt shadow-lg overflow-hidden border border-gray-100">
+                {/* Text Content - Top */}
+                <div className="p-8 md:p-10">
+                  <p className="text-lg md:text-xl text-iron-grey leading-relaxed font-medium text-center">
+                    Takt is a purpose-built <span className="text-takt-orange font-semibold">AI retrieval engine</span> for production teams—turning every input into output,
+                    delivering perfect, accurate, relevant info at your fingertips.
+                  </p>
+                </div>
+                
+                {/* Production Floor Image - Bottom */}
+                <div className="relative bg-gradient-to-br from-canvas-cream to-gray-100">
+                  <img
+                    src="/production_floor.png"
+                    alt="Manufacturing production floor showcasing industrial operations and equipment"
+                    className="w-full h-auto object-cover max-h-64 md:max-h-80"
+                  />
+                  {/* Subtle overlay for visual cohesion */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </div>
           </div>
           
         </div>
