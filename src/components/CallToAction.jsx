@@ -110,19 +110,53 @@ const CallToAction = ({ className = '' }) => {
   }
 
   return (
-    <section className={`py-16 md:py-24 bg-gradient-to-br from-takt-orange to-amber-orange ${className}`}>
-      <div className="container mx-auto px-4">
+    <section className={`relative py-16 md:py-24 overflow-hidden ${className}`}>
+      {/* Layered Wave Background */}
+      <div className="absolute inset-0">
+        {/* Base layer - Canvas Cream */}
+        <div className="absolute inset-0 bg-canvas-cream"></div>
+        
+        {/* Wave Layer 1 - Takt Green */}
+        <div className="absolute inset-0">
+          <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+            <path
+              d="M0,300 C300,200 600,350 1200,250 L1200,400 L0,400 Z"
+              fill="#3E553C"
+              opacity="0.8"
+            />
+          </svg>
+        </div>
+        
+        {/* Wave Layer 2 - Takt Orange */}
+        <div className="absolute inset-0">
+          <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+            <path
+              d="M0,350 C400,250 800,400 1200,300 L1200,400 L0,400 Z"
+              fill="#E16809"
+              opacity="0.9"
+            />
+          </svg>
+        </div>
+        
+        {/* Wave Layer 3 - Amber Orange (lightest) */}
+        <div className="absolute inset-0">
+          <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+            <path
+              d="M0,380 C200,320 900,420 1200,350 L1200,400 L0,400 Z"
+              fill="#CC7A00"
+              opacity="0.7"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="bg-white rounded-takt shadow-lg p-8">
+          <div className="bg-white/95 backdrop-blur-sm rounded-takt shadow-xl p-8 md:p-10">
             {/* Headline */}
-            <h2 className="text-3xl md:text-4xl font-bold text-iron-grey mb-4">
-              Join the wave of <span className="text-takt-orange">next-gen manufacturing</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-takt-green mb-8">
+              Join the wave of <span className="text-takt-orange">next-gen manufacturing.</span>
             </h2>
-            
-            {/* Subtext */}
-            <p className="text-lg text-iron-grey opacity-80 mb-8">
-              Many have already signed up to Takt—don't miss out.
-            </p>
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
