@@ -8,7 +8,7 @@ import QuestionDropdown from './QuestionDropdown';
  * Follows brand guidelines: warm colors, curved edges, generous spacing
  */
 const ThreePanelDemo = ({ className = '' }) => {
-  const [activePanel, setActivePanel] = useState(null);
+  const [activePanels, setActivePanels] = useState({});
   const [selectedQuestions, setSelectedQuestions] = useState({});
   const [loadingPanel, setLoadingPanel] = useState(null);
 
@@ -90,7 +90,10 @@ const ThreePanelDemo = ({ className = '' }) => {
     // Brief delay to show loading, then trigger animation
     setTimeout(() => {
       setLoadingPanel(null);
-      setActivePanel(panelId);
+      setActivePanels(prev => ({
+        ...prev,
+        [panelId]: true
+      }));
     }, 300);
   };
 
@@ -111,7 +114,7 @@ const ThreePanelDemo = ({ className = '' }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {demoScenarios.map((scenario) => {
             const selectedQuestion = selectedQuestions[scenario.id];
-            const isAnimating = activePanel === scenario.id && selectedQuestion;
+            const isAnimating = activePanels[scenario.id] && selectedQuestion;
             const isLoading = loadingPanel === scenario.id;
             
             return (
