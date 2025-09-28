@@ -23,8 +23,8 @@ const ThreePanelDemo = ({ className = '' }) => {
           response: 'Shipment #482 from Supplier A is delayed due to a logistics hold at the port. Estimated arrival: Friday, 2 PM.'
         },
         {
-          question: 'Which supplier has the best on-time delivery record?',
-          response: 'Supplier B: 98% on-time deliveries over the last 6 months.'
+          question: 'Which quality control tests are delaying shipment?',
+          response: 'Spectroscopy analysis for Batch #146 is still pending, expected results in 2 hours.'
         },
         {
           question: 'Do we have enough Ethylene stock to cover this week\'s production?',
@@ -46,8 +46,8 @@ const ThreePanelDemo = ({ className = '' }) => {
           response: 'This machine has logged 5 hours downtime in the past month, down 40% compared to last month.'
         },
         {
-          question: 'Are there spare pump parts available?',
-          response: 'Yes, 4 replacement filters and 2 spare pumps are in inventory.'
+          question: 'Why did the last batch fail QC?',
+          response: 'Batch #145 failed viscosity spec (target 450–500 cP, measured 390 cP). Root cause likely improper mixing temperature in Reactor 2.'
         }
       ]
     },
@@ -57,8 +57,8 @@ const ThreePanelDemo = ({ className = '' }) => {
       image: '/business_meeting.png',
       questions: [
         {
-          question: 'What are our top chemical orders this month and due dates?',
-          response: 'Top 3 orders: Order #2205 (Polyethylene, Sept 25), #2207 (Methanol, Sept 28), #2208 (Styrene, Oct 2).'
+          question: 'Is there an operator trained in distillation for the night shift?',
+          response: 'Yes, Brian S. is certified in distillation and working tonight.'
         },
         {
           question: 'Which customers contribute the most revenue this quarter?',
