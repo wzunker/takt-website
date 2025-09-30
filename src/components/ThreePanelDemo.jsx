@@ -182,7 +182,7 @@ const ThreePanelDemo = ({ className = '' }) => {
                         </svg>
                       </div>
                       <p className="text-iron-grey text-sm opacity-70 leading-relaxed">
-                        Select a question above to see how Takt provides instant, accurate answers
+                        {/* Select a question above to see how Takt provides instant, accurate answers*/}
                       </p>
                     </div>
                   )}
