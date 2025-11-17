@@ -62,10 +62,11 @@ const HeroSection = ({ className = '' }) => {
                     /* YouTube Embed */
                     <div className="relative aspect-video">
                       <iframe
-                        src="https://www.youtube.com/embed/9No2Smi9AiI?autoplay=1&rel=0&modestbranding=1"
+                        src="https://www.youtube-nocookie.com/embed/9No2Smi9AiI?autoplay=1&rel=0&modestbranding=1"
                         title="Takt Demo Video"
                         className="absolute inset-0 w-full h-full"
                         frameBorder="0"
+                        referrerPolicy="strict-origin-when-cross-origin"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                       ></iframe>
