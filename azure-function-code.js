@@ -29,12 +29,12 @@ module.exports = async function (context, req) {
 
     try {
         // Validate request body
-        const { email, companyName } = req.body;
+        const { email, companyName, dataSystems } = req.body;
         
-        if (!email || !companyName) {
+        if (!email || !companyName || !dataSystems) {
             context.res.status = 400;
             context.res.body = { 
-                error: "Email and company name are required" 
+                error: "Email, company name, and data systems information are required" 
             };
             return;
         }
@@ -62,6 +62,7 @@ module.exports = async function (context, req) {
             rowKey: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
             email: email.toLowerCase().trim(),
             companyName: companyName.trim(),
+            dataSystems: dataSystems.trim(),
             timestamp: new Date().toISOString(),
             source: "takt-website",
             ipAddress: req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || 'unknown'
@@ -71,7 +72,7 @@ module.exports = async function (context, req) {
         await tableClient.createEntity(entity);
 
         // Log success
-        context.log(`Email signup successful: ${email} from ${companyName}`);
+        context.log(`Email signup successful: ${email} from ${companyName} - Data Systems: ${dataSystems}`);
 
         // Return success response
         context.res.status = 200;

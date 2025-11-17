@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Layout, HeroSection, ThreePanelDemo, CallToAction } from './components';
+import { Header, Layout, HeroSection, ThreePanelDemo, CallToAction, TeamFundersSection } from './components';
 
 function App() {
   return (
@@ -15,6 +15,9 @@ function App() {
 
       {/* Call to Action Section Implementation - Phase 5.1 */}
       <CallToAction />
+
+      {/* Team and Funders Section Implementation - Phase 5.2 */}
+      <TeamFundersSection />
     </Layout>
   );
 }

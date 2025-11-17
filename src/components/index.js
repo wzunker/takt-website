@@ -7,6 +7,7 @@ export { default as Header } from './Header.jsx';
 export { default as HeroSection } from './HeroSection.jsx';
 export { default as ThreePanelDemo } from './ThreePanelDemo.jsx';
 export { default as CallToAction } from './CallToAction.jsx';
+export { default as TeamFundersSection } from './TeamFundersSection.jsx';
 export { default as ChatBubbleAnimation } from './ChatBubbleAnimation.jsx';
 export { default as TypingEffect } from './TypingEffect.jsx';
 export { default as QuestionDropdown } from './QuestionDropdown.jsx';
