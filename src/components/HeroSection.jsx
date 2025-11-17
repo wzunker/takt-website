@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 /**
  * Takt Hero Section Component
@@ -8,6 +8,74 @@ import React, { useState } from 'react';
  */
 const HeroSection = ({ className = '' }) => {
   const [showVideo, setShowVideo] = useState(false);
+  const [isYouTubeAPIReady, setIsYouTubeAPIReady] = useState(false);
+  const playerRef = useRef(null);
+  const videoId = '9No2Smi9AiI';
+
+  // Load YouTube IFrame API
+  useEffect(() => {
+    // Check if API is already loaded
+    if (window.YT && window.YT.Player) {
+      setIsYouTubeAPIReady(true);
+      return;
+    }
+
+    // Load YouTube IFrame API script
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Set up global callback
+    window.onYouTubeIframeAPIReady = () => {
+      setIsYouTubeAPIReady(true);
+    };
+
+    return () => {
+      // Cleanup
+      delete window.onYouTubeIframeAPIReady;
+    };
+  }, []);
+
+  // Initialize player when video is shown and API is ready
+  useEffect(() => {
+    if (showVideo && isYouTubeAPIReady && !playerRef.current) {
+      playerRef.current = new window.YT.Player('youtube-player', {
+        height: '100%',
+        width: '100%',
+        videoId: videoId,
+        playerVars: {
+          autoplay: 1, // Auto-play when user clicks thumbnail
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          enablejsapi: 1
+        },
+        events: {
+          onReady: (event) => {
+            // Try to set HD quality when player is ready, then play
+            try {
+              event.target.setPlaybackQuality('hd720');
+              // Start playing immediately after setting quality
+              event.target.playVideo();
+            } catch (error) {
+              console.log('Could not set HD quality or play video:', error);
+            }
+          },
+          onStateChange: (event) => {
+            // Try to set HD quality when video starts playing
+            if (event.data === window.YT.PlayerState.PLAYING) {
+              try {
+                event.target.setPlaybackQuality('hd720');
+              } catch (error) {
+                console.log('Could not set HD quality during playback:', error);
+              }
+            }
+          }
+        }
+      });
+    }
+  }, [showVideo, isYouTubeAPIReady, videoId]);
   return (
     <section className={`pt-32 pb-20 md:pt-40 md:pb-32 bg-canvas-cream relative overflow-hidden ${className}`}>
       {/* Subtle background pattern */}
@@ -44,7 +112,7 @@ const HeroSection = ({ className = '' }) => {
                          onClick={() => setShowVideo(true)}>
                       {/* YouTube Thumbnail Image */}
                       <img
-                        src="https://img.youtube.com/vi/9No2Smi9AiI/maxresdefault.jpg"
+                        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                         alt="Takt Demo Video Thumbnail"
                         className="w-full h-full object-cover"
                       />
@@ -59,17 +127,12 @@ const HeroSection = ({ className = '' }) => {
                       </div>
                     </div>
                   ) : (
-                    /* YouTube Embed */
+                    /* YouTube Player with API */
                     <div className="relative aspect-video">
-                      <iframe
-                        src="https://www.youtube-nocookie.com/embed/9No2Smi9AiI?autoplay=1&rel=0&modestbranding=1"
-                        title="Takt Demo Video"
+                      <div
+                        id="youtube-player"
                         className="absolute inset-0 w-full h-full"
-                        frameBorder="0"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
+                      ></div>
                     </div>
                   )}
                 </div>
