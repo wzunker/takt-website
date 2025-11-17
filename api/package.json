@@ -1,0 +1,17 @@
+{
+  "name": "takt-website-api",
+  "version": "1.0.0",
+  "description": "Azure Functions for Takt website",
+  "main": "index.js",
+  "dependencies": {
+    "@azure/data-tables": "^13.2.2",
+    "@azure/communication-email": "^1.0.0",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests specified\""
+  },
+  "author": "Takt Team",
+  "license": "MIT"
+}

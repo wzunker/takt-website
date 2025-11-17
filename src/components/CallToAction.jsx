@@ -70,7 +70,7 @@ const CallToAction = ({ className = '', isEmbedded = false }) => {
 
     try {
             // Call Azure Function
-            const response = await fetch('https://takt-website-functions-fcf4cphufscgenbe.eastus-01.azurewebsites.net/api/submitemailsignup', {
+            const response = await fetch('/api/SubmitEmailSignup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
